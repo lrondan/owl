@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +26,7 @@ SECRET_KEY = 'django-insecure-9wo&ahg17l#ydr0u5vvh83p+gra7qldnsk*kxy2l2sn4kh)5^9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'quote',
+    'web_app',
 ]
 
 MIDDLEWARE = [
@@ -73,12 +74,31 @@ WSGI_APPLICATION = 'owl.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+DB_ENGINE   = os.getenv('DB_ENGINE'   , None)
+DB_USERNAME = os.getenv('DB_USERNAME' , None)
+DB_PASS     = os.getenv('DB_PASS'     , None)
+DB_HOST     = os.getenv('DB_HOST'     , None)
+DB_PORT     = os.getenv('DB_PORT'     , None)
+DB_NAME     = os.getenv('DB_NAME'     , None)
+
+if DB_ENGINE and DB_NAME and DB_USERNAME:
+    DATABASES = { 
+      'default': {
+        'ENGINE'  : 'django.db.backends.' + DB_ENGINE, 
+        'NAME'    : DB_NAME,
+        'USER'    : DB_USERNAME,
+        'PASSWORD': DB_PASS,
+        'HOST'    : DB_HOST,
+        'PORT'    : DB_PORT,
+        }, 
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': 'db.sqlite3',
+        }
+    }
 
 
 # Password validation
@@ -116,3 +136,28 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+LOGIN_REDIRECT_URL = '/'
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+#EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+#EMAIL_HOST = 'smtp.gmail.com'
+#EMAIL_PORT = 587
+#EMAIL_USE_TLS = True
+
+#EMAIL_HOST_USER = 'lrondan1126@gmail.com'
+#EMAIL_HOST_PASSWORD = 'APP_PASSWORD_GMAIL'
+
+#DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+#CONTACT_EMAIL = 'destino@empresa.com'
+
+
+# Syntax: URI -> Import_PATH
+DYNAMIC_API = {
+    # SLUG -> Import_PATH 
+    'product'  : "apps.pages.models.Product",
+}

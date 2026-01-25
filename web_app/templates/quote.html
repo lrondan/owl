@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block title %}OwlScan Labs{% endblock %}
+
+{% block content %}
+<div class="hero row align-items-center">
+    <div class="col-md-7">
+        <h2>Best & Trusted</h2>
+        <h2><span>Cybersecurity</span> Service</h2>
+        <p>There are two types of companies: those that have been hacked and those that don't know it.</p>
+        <a class="btn" href="">Explore Now</a>
+    </div>
+        <div class="col-md-5">
+            <div class="form">
+                <h3>Get A Quote</h3>
+                    <form method="post">
+                        {% csrf_token %}
+                        <input class="form-control" type="text" name="name" placeholder="Your Name" required>
+                        <input class="form-control" type="text" name="phone" placeholder="Mobile Number" required>
+                        <input class="form-control" type="text" name="email" placeholder="Email Address" required>
+                        <input class="form-control" type="text" name="company" placeholder="Company Name" required>
+                        <div class="control-group">
+                            <select class="custom-select" name="service" required>
+                                <option selected>Choose a service</option>
+                                <option value="Black">Black Box</option>
+                                <option value="Gray">Gray Box</option>
+                                <option value="White">White Box</option>
+                            </select>
+                        </div>
+                        <textarea class="form-control" name="message" placeholder="Comment"></textarea>
+                        <button class="btn btn-block" type="submit">Get A Quote</button>
+                    </form>
+                    {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert 
+                            {% if message.tags == 'error' %}alert-danger{% endif %}
+                            {% if message.tags == 'success' %}alert-success{% endif %}
+                            mb-3">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% endif %}
+            </div>
+        </div>
+</div>
+{% endblock %}
