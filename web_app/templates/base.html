@@ -14,7 +14,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400&display=swap" rel="stylesheet">
         
         <!-- CSS Libraries -->
-        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet">
+        <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
         <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
         <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
@@ -32,8 +32,7 @@
                         <div class="col-lg-3">
                             <div class="brand">
                                 <a href="#">
-                                    OwlScan Labs
-                                    <!-- <img src="img/logo.png" alt="Logo"> -->
+                                    <img src="{% static 'img/logov2.png' %}" alt="Logo" style="width: auto; height: auto;">
                                 </a>
                             </div>
                         </div>
@@ -61,7 +60,7 @@
                                     <span class="navbar-toggler-icon"></span>
                                 </button>
 
-                                <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+                                <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                                     <div class="navbar-nav ml-auto">
                                         <a href="{% url 'quote' %}" class="nav-item nav-link active">Home</a>
                                         <a href="#" class="nav-item nav-link">Services</a>
@@ -150,7 +149,7 @@
 
         <!-- JavaScript Libraries -->
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'bootstrap/js/bootstrap.bundle.min.js' %}"></script>
     <script src="{% static 'lib/easing/easing.min.js' %}"></script>
     <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
     <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>

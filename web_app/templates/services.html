@@ -31,28 +31,34 @@
 <!-- Feature Start -->
 <div class="feature">
     <div class="container">
-        <div class="row">
+        <div class="columns">
             <div class="row mb-5">
-                <div class="section-header left">
+                <div class="section-header text-center">
                     <h2>Penetration Testing</h2>
                 </div>
-                <p>
-                    Penetration testing (pentesting) allows you to evaluate the true security level of your systems by simulating controlled attacks like those a cybercriminal would carry out. Depending on the scope and information provided, there are three main approaches: Black Box, White Box, and Grey Box.</p>
+                <p style="font-size: large; text-align: center;">
+                    Penetration testing (pentesting) allows you to evaluate the true security level of
+                     your systems by simulating controlled attacks like those a cybercriminal would carry out.
+                     Depending on the scope and information provided, there are three main approaches: Black Box,
+                     White Box, and Grey Box.</p>
                 </p>
             </div>
-            <div class="col-md-5">
-                <div class="row align-items-center feature-item">
+
+            <div class="card row-mb-5"  style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+                <div class="row g-0 align-items-center feature-item">
                     <div class="col-5">
-                        <img src="{% static 'img/white.png' %}" alt="white-box">
+                        <img src="{% static 'img/white.png' %}" alt="white-box" style="max-height: 210px; max-width: 210px;">
                     </div>
                     <div class="col-7">
-                        <h3>White Box Testing</h3>
-                        <p>
+                        <h3 class="card-title">White Box Testing</h3>
+                        <p class="card-text">
                             The tester will have full knowledge of the application and its expected behaviour and is much more time consuming than black-box testing. The full knowledge in a White-Box testing scenario provides a testing approach that guarantees the entire attack surface can be validated.                                    </p>
                     </div>
                 </div>
             </div>
-            <div class="col-md-7">
+            
+            <div class="card row-mb-9">
                 <div class="row align-items-center feature-item">
                     <div class="col-5">
                         <img src="{% static 'img/gray.png' %}" alt="gray-box">
@@ -65,7 +71,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-7 offset-md-5">
+            <div class="card row-md-5">
                 <div class="row align-items-center feature-item">
                     <div class="col-5">
                         <img src="{% static 'img/black.png' %}" alt="black-box">
