@@ -3,6 +3,8 @@ from django.contrib import messages
 from django.core.mail import send_mail
 
 from .models import QuoteRequest
+from .models import Proyecto
+
 
 
 def quote(request):
@@ -52,3 +54,8 @@ def quote(request):
             messages.success(request, "Your quote request has been sent successfully!")
 
     return render(request, "quote.html")
+
+def proyectos_destacados(request):
+    # Puedes filtrar según GET params si quieres (ej: ?tipo=PENTEST)
+    proyectos = Proyecto.objects.filter(destacado=True).order_by('-fecha_publicacion')[:6]
+    return render(request, "projects.html", {'proyectos': proyectos})

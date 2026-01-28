@@ -1,0 +1,111 @@
+{% block service2 %}
+{% load static %}         
+<!-- Feature Start -->
+<div class="feature" id="services2">
+    <div class="container">
+        <div class="columns" style="gap: 20px;">
+            <div class="row mb-5">
+                <div class="section-header text-center">
+                    <h2>Penetration Testing</h2>
+                </div>
+                <p style="font-size: 20px; text-align: center;">
+                    Penetration testing (pentesting) allows you to evaluate the true security level of
+                     your systems by simulating controlled attacks like those a cybercriminal would carry out.
+                     Depending on the scope and information provided, there are three main approaches: Black Box,
+                     White Box, and Grey Box.</p>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Feature End -->  
+ 
+<div class="container">
+  <div class="row row-cols-1 row-cols-md-3 g-4" >
+    <div class="col" >
+      <div class="card h-100 border-danger text-center" style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="card-body">
+        <div class="text-center">
+            <img src="{% static 'img/white.png' %}" alt="white-box" style="max-height: 150px; max-width: 150px;">
+        </div>
+          <p class="text-center card-text">The full knowledge in a White-Box testing scenario provides a testing approach that
+               guarantees the entire attack surface can be validated.                                    
+            </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 border-danger text-center" style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="card-body">
+        <div class="text-center">
+            <img src="{% static 'img/gray.png' %}" alt="gray-box" style="max-width: 150px; max-height: 150px;">
+        </div>
+          <p class=" text-center card-text">
+            With Grey-Box testing, the limited knowledge given saves time, and is often chosen for extremely
+            well-hardened attack surfaces.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 border-danger text-center" style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="card-body">
+        <div class="text-center">
+            <img src="{% static 'img/black.png' %}" alt="black-box" style="max-width: 150px; max-height: 150px;">
+        </div>
+          <p class="card-text">This testing process is a high-level process where the tester is
+             not given any information about the inner workings of the application or service.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container g-4" style="margin-top: 50px;">
+  <div class="row row-cols-1 row-cols-md-3 g-4" >
+    <div class="col" >
+      <div class="card h-100 border-danger text-center" style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="card-body">
+        <div class="text-center">
+            <img src="{% static 'img/webscan.png' %}" alt="white-box" style="max-height: 150px; max-width: 150px;">
+        </div>
+          <p class="text-center card-text">
+            Web security audit is a comprehensive assessment of a web application's security posture, identifying vulnerabilities and weaknesses that could be exploited by attackers.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 border-danger text-center" style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="card-body">
+        <div class="text-center">
+            <img src="{% static 'img/incident.webp' %}" alt="gray-box" style="max-width: 150px; max-height: 150px;">
+        </div>
+          <p class=" text-center card-text">
+            Incident reporting is a proactive security measure that allows organizations to detect and respond to potential security incidents.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 border-danger text-center" style="max-height: auto; color: rgb(7, 7, 7); border-radius: 20px; background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);">
+        <div class="card-body">
+        <div class="text-center">
+            <img src="{% static 'img/learn-banner.svg' %}" alt="black-box" style="max-width: 250px; max-height: 250px;">
+        </div>
+          <p class=" text-center card-text">Educating staff on cybersecurity fundamentals helps to enhance their skills
+             and prepares them to handle threats.
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

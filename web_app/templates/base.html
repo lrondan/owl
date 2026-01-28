@@ -16,6 +16,10 @@
         <!-- CSS Libraries -->
         <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+        <!-- En el <head> de base.html -->
+        <script src="https://unpkg.com/htmx.org@2.0.1"></script>
+        <!-- Opcional: para mejor UX -->
+        <script src="https://unpkg.com/htmx.org@2.0.1/dist/ext/loading-states.js"></script>
         <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
         <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
 
@@ -63,11 +67,13 @@
                                 <div class="collapse navbar-collapse justify-content-end" id="navbarCollapse">
                                     <div class="navbar-nav ml-auto">
                                         <a href="{% url 'quote' %}" class="nav-item nav-link active">Home</a>
-                                        <a href="#" class="nav-item nav-link">Services</a>
-                                        <a href="#" class="nav-item nav-link">Projects</a>
+                                        <a href="#services" class="nav-item nav-link">Audit</a>
+                                        <a href="#services2" class="nav-item nav-link">Services</a>
+                                        <a href="#projects" class="nav-item nav-link">Projects</a>
+                                        <a href="#" class="nav-item nav-link">CTF's</a>
                                         <a href="#" class="nav-item nav-link">Blog</a>
                                         <div class="nav-item dropdown">
-                                            <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Learn</a>
+                                            <a href="" class="nav-link dropdown-toggle" data-toggle="dropdown">Learn</a>
                                             <div class="dropdown-menu">
                                                 <a href="https://www.arduino.cc/" class="dropdown-item">Arduino</a>
                                                 <a href="https://www.raspberrypi.com/" class="dropdown-item">Raspberry Pi</a>
@@ -87,6 +93,14 @@
 
 {% block services %}
 {% include "services.html" %}
+{% endblock %}
+
+{% block services2 %}
+{% include "services2.html" %}
+{% endblock %}
+
+{% block projects %}
+{% include "projects.html" %}
 {% endblock %}
 
 {% block footer %}

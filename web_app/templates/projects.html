@@ -1,0 +1,45 @@
+{% block content %}
+{% load static %}
+<div class="container my-5" id="projects">
+  <h2 class="mb-4 text-center">Proyectos y Casos de Éxito</h2>
+  <p class="lead text-center mb-5">Descubre cómo hemos ayudado a empresas como la tuya a fortalecer su seguridad.</p>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    {% for proyecto in proyectos %}
+      <div class="col">
+        <div class="card h-100 shadow-lg border-0">
+          {% if proyecto.imagen %}
+            <img src="{{ proyecto.imagen.url }}" class="card-img-top" alt="{{ proyecto.titulo }}" style="height: 200px; object-fit: cover;">
+          {% endif %}
+          
+          <div class="card-body">
+            <h5 class="card-title">{{ proyecto.titulo }}</h5>
+            <p class="card-text text-muted small">
+              {{ proyecto.descripcion_corta|truncatewords:40 }}
+            </p>
+            <div class="d-flex justify-content-between align-items-center">
+              <span class="badge bg-primary">{{ proyecto.tipo }}</span>
+              <small class="text-muted">{{ proyecto.fecha_publicacion|date:"d M Y" }}</small>
+            </div>
+          </div>
+          
+          <div class="card-footer bg-white border-0 text-center">
+            <a href="{{ proyecto.url_blog }}" 
+               target="_blank" 
+               rel="noopener noreferrer" 
+               class="btn btn-outline-primary btn-lg w-100">
+              Leer caso completo en el blog →
+            </a>
+          </div>
+        </div>
+      </div>
+    {% empty %}
+      <div class="col-12">
+        <div class="alert alert-info text-center">
+          Aún no hay proyectos destacados. ¡Pronto agregaremos casos reales!
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
